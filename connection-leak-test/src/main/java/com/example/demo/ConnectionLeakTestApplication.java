@@ -121,15 +121,5 @@ public class ConnectionLeakTestApplication {
 		public DummyInterceptor(ApplicationEventPublisher applicationEventPublisher) {
 			super(applicationEventPublisher);
 		}
-
-		//registering senders at the tcp connection level fixes the issue  
-//		@Override
-//		public void registerSenders(List<TcpSender> sendersToRegister) {
-//			TcpConnectionSupport theConnection = getTheConnection();
-//			while (theConnection instanceof TcpConnectionInterceptorSupport) {
-//				theConnection = ((TcpConnectionInterceptorSupport) theConnection).getTheConnection();
-//			}
-//			theConnection.registerSenders(sendersToRegister);
-//		}
 	}
 }
